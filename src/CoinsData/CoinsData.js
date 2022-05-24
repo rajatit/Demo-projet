@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Prices from "../Prices/Prices";
 import "./SearchStyles/SearchBar.scss";
 
+/*Coins Data */
+
 function CoinsData() {
   let ind = 1;
   const link =
@@ -16,7 +18,6 @@ function CoinsData() {
   const [maxPriceValue, setmaxPriceValue] = useState("");
   const [selectedValue, setSelectedValue] = useState("");
   const [orderPlaceHolder, setOrderPlaceHolder] = useState("ORDER");
-
 
   useEffect(() => {
     Axios.get(link)
@@ -36,7 +37,7 @@ function CoinsData() {
       );
       setCoins(sorted);
       setSelectedValue("");
-      setOrderPlaceHolder("ASC")
+      setOrderPlaceHolder("ASC");
     }
     if (selectedValue === "DESC") {
       const sorted = [...coins].sort((a, b) =>
@@ -44,7 +45,7 @@ function CoinsData() {
       );
       setCoins(sorted);
       setSelectedValue("");
-      setOrderPlaceHolder("DESC")
+      setOrderPlaceHolder("DESC");
     }
   };
 
